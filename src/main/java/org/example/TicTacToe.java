@@ -8,14 +8,26 @@ public class TicTacToe {
   };
 
   public void play(int x, int y) {
-    if (x < 1 || x > 3) {
-      throw new RuntimeException("X esta fora do tabuleiro");
-    } else if (y < 1 || y > 3) {
-      throw new RuntimeException("Y esta fora do tabuleiro");
-    }
+    checkAxis(x);
+    checkAxis(y);
+    setBox(x, y);
 
     if (board[x - 1][y - 1] != '\0') {
       throw new RuntimeException("Espaco ocupado");
+    } else {
+      board[x - 1][y - 1] = 'X';
+    }
+  }
+
+  private void checkAxis(int axis) {
+    if (axis < 1 || axis > 3) {
+      throw new RuntimeException("X esta fora do tabuleiro");
+    }
+  }
+
+  private void setBox(int x, int y) {
+    if (board[x - 1][y - 1] != '\0') {
+      throw new RuntimeException("Local esta ocupado");
     } else {
       board[x - 1][y - 1] = 'X';
     }
