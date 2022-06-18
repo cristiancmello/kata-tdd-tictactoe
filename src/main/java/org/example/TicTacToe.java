@@ -11,12 +11,6 @@ public class TicTacToe {
     checkAxis(x);
     checkAxis(y);
     setBox(x, y);
-
-    if (board[x - 1][y - 1] != '\0') {
-      throw new RuntimeException("Espaco ocupado");
-    } else {
-      board[x - 1][y - 1] = 'X';
-    }
   }
 
   private void checkAxis(int axis) {
