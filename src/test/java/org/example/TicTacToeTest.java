@@ -7,7 +7,7 @@ public class TicTacToeTest {
   @Test
   public void quandoXForaTabuleiroEntaoRuntimeException() {
     assertThrows(RuntimeException.class, () -> {
-      throw new RuntimeException();
+
     });
   }
 }
