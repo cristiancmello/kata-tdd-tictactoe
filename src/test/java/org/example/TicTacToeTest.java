@@ -46,4 +46,12 @@ public class TicTacToeTest {
     ticTacToe.play(1, 1);
     assertEquals('O', ticTacToe.nextPlayer());
   }
+
+  @Test
+  public void dadaUltimaJogadaDeJogadorOQuandoProximaJogadaEntaoJogadorX() {
+    ticTacToe.play(1, 1); // vez do Jogador X
+    ticTacToe.play(1, 2); // vez do Jogador O
+
+    assertEquals('X', ticTacToe.nextPlayer());
+  }
 }
