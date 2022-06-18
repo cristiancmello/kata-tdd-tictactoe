@@ -35,4 +35,9 @@ public class TicTacToeTest {
       ticTacToe.play(2, 1);
     });
   }
+
+  @Test
+  public void dadaPrimeiraJogadaQuandoProximaJogadaEntaoJogadorX() {
+    assertEquals('X', ticTacToe.nextPlayer());
+  }
 }
