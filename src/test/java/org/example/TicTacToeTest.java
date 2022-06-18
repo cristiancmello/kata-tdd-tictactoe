@@ -27,4 +27,12 @@ public class TicTacToeTest {
       ticTacToe.play(2, 5);
     });
   }
+
+  @Test
+  public void quandoLocalOcupadoEntaoRuntimeException() {
+    assertThrows(RuntimeException.class, () -> {
+      ticTacToe.play(2, 1);
+      ticTacToe.play(2, 1);
+    });
+  }
 }
