@@ -73,4 +73,16 @@ public class TicTacToeTest {
     String actual = ticTacToe.play(3, 1); // X
     assertEquals("X é o vencedor", actual);
   }
+
+  @Test
+  public void quandoJogarETodaLinhaVerticalEntaoVitoria() {
+    ticTacToe.play(2, 1);
+    ticTacToe.play(1, 1);
+    ticTacToe.play(3, 1);
+    ticTacToe.play(1, 2);
+    ticTacToe.play(2, 2);
+
+    String actual = ticTacToe.play(1, 3);
+    assertEquals("O é o vencedor", actual);
+  }
 }
