@@ -56,12 +56,6 @@ public class TicTacToe {
       diagonal2 += board[index][SIZE - index - 1];
       horizontal += board[index][y - 1];
       vertical += board[x - 1][index];
-
-      if (board[0][index] + board[1][index] + board[2][index] == playerTotal) {
-        return true;
-      } else if (board[index][0] + board[index][1] + board[index][2] == playerTotal) {
-        return true;
-      }
     }
 
     if (diagonal1 == playerTotal
