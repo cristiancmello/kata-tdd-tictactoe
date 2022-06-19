@@ -8,6 +8,7 @@ public class TicTacToe {
   };
 
   private char lastPlayer = '\0';
+  private static final int SIZE = 3;
 
   public String play(int x, int y) {
     checkAxis(x);
@@ -15,12 +16,8 @@ public class TicTacToe {
     lastPlayer = nextPlayer();
     setBox(x, y, lastPlayer);
 
-    for (int index = 0; index < 3; index++) {
-      if (board[0][index] == lastPlayer
-        && board[1][index] == lastPlayer
-        && board[2][index] == lastPlayer) {
-        return lastPlayer + " é o vencedor";
-      }
+    if (isWin()) {
+      return lastPlayer + " é o vencedor";
     }
 
     return "Sem vencedor";
@@ -45,5 +42,15 @@ public class TicTacToe {
       return 'O';
     }
     return 'X';
+  }
+
+  private boolean isWin() {
+    for (int index = 0; index < SIZE; index++) {
+      if (board[0][index] + board[1][index] + board[2][index] == (lastPlayer * SIZE)) {
+        return true;
+      }
+    }
+
+    return false;
   }
 }
