@@ -16,7 +16,7 @@ public class TicTacToe {
     lastPlayer = nextPlayer();
     setBox(x, y, lastPlayer);
 
-    if (isWin()) {
+    if (isWin(x, y)) {
       return lastPlayer + " é o vencedor";
     } else if (isDraw()) {
       return "O jogo empatou";
@@ -46,14 +46,16 @@ public class TicTacToe {
     return 'X';
   }
 
-  private boolean isWin() {
+  private boolean isWin(int x, int y) {
     int playerTotal = lastPlayer * 3;
-    char diagonal1 = '\0';
-    char diagonal2 = '\0';
+    char diagonal1, diagonal2, horizontal, vertical;
+    diagonal1 = diagonal2 = horizontal = vertical = '\0';
 
     for (int index = 0; index < SIZE; index++) {
       diagonal1 += board[index][index];
       diagonal2 += board[index][SIZE - index - 1];
+      horizontal += board[index][y - 1];
+      vertical += board[x - 1][index];
 
       if (board[0][index] + board[1][index] + board[2][index] == playerTotal) {
         return true;
@@ -62,7 +64,10 @@ public class TicTacToe {
       }
     }
 
-    if (diagonal1 == playerTotal || diagonal2 == playerTotal) {
+    if (diagonal1 == playerTotal
+      || diagonal2 == playerTotal
+      || horizontal == playerTotal
+      || vertical == playerTotal) {
       return true;
     }
 
