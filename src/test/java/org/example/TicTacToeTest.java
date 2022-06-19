@@ -56,4 +56,10 @@ public class TicTacToeTest {
 
     assertEquals('X', ticTacToe.nextPlayer());
   }
+
+  @Test
+  public void quandoJogarEntaoSemVencedor() {
+    String actual = ticTacToe.play(1, 1);
+    assertEquals("Sem vencedor", actual);
+  }
 }
