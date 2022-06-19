@@ -18,6 +18,8 @@ public class TicTacToe {
 
     if (isWin()) {
       return lastPlayer + " é o vencedor";
+    } else if (isDraw()) {
+      return "O jogo empatou";
     }
 
     return "Sem vencedor";
@@ -65,5 +67,17 @@ public class TicTacToe {
     }
 
     return false;
+  }
+
+  private boolean isDraw() {
+    for (int x = 0; x < SIZE; x++) {
+      for (int y = 0; y < SIZE; y++) {
+        if (board[x][y] == '\0') {
+          return false;
+        }
+      }
+    }
+
+    return true;
   }
 }
