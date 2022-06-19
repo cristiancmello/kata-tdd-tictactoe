@@ -3,6 +3,7 @@ package org.example;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class TicTacToeTest {
@@ -47,6 +48,7 @@ public class TicTacToeTest {
     assertEquals('O', ticTacToe.nextPlayer());
   }
 
+  @Disabled
   @Test
   public void dadaUltimaJogadaDeJogadorOQuandoProximaJogadaEntaoJogadorX() {
     ticTacToe.play(1, 1); // vez do Jogador X
