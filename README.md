@@ -27,6 +27,14 @@ mvn test
 * Versions Maven Plugin
 * Spotify Format Code Plugin (google's style by default)
 
+### JaCoCo Plugin
+
+* Generate Code Coverage Report
+
+```sh
+mvn clean jacoco:prepare-agent install jacoco:report
+```
+
 ### Spotify Format Code Plugin
 
 * Format all files command:
